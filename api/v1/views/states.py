@@ -15,7 +15,8 @@ def get_all_states():
     return jsonify(list_dict), 200
 
 
-@app_views.route('/states/<string:state_id>', methods=['GET'], strict_slashes=False)
+@app_views.route('/states/<string:state_id>', methods=['GET'],
+                 strict_slashes=False)
 def get_state_by_id(state_id):
     """ddd"""
     obj = storage.get(State, state_id)
@@ -25,7 +26,8 @@ def get_state_by_id(state_id):
         return jsonify({"error": "Not found"}), 404
 
 
-@app_views.route('/states/<state_id>', methods=['DELETE'], strict_slashes=False)
+@app_views.route('/states/<state_id>', methods=['DELETE'],
+                 strict_slashes=False)
 def delete_state_by_id(state_id):
     """delete method api"""
     obj = storage.get(State, state_id)
@@ -37,7 +39,8 @@ def delete_state_by_id(state_id):
         return jsonify({"error": "Not found"}), 404
 
 
-@app_views.route('/states/<state_id>', methods=['POST'], strict_slashes=False)
+@app_views.route('/states/<state_id>', methods=['POST'],
+                 strict_slashes=False)
 def post_state_create(state_id):
     """ddd"""
     a = State()
@@ -47,7 +50,8 @@ def post_state_create(state_id):
     return jsonify(a.to_dict()), 200
 
 
-@app_views.route('/states/<state_id>', methods=['POST'], strict_slashes=False)
+@app_views.route('/states/<state_id>', methods=['POST'],
+                 strict_slashes=False)
 def put_state_update(state_id):
     """ddd"""
     pass
