@@ -2,7 +2,7 @@
 """Starts a Flask API application."""
 import os
 from models import storage
-from api.v1.views import app_views, index, states
+from api.v1.views import app_views
 from flask import Flask, jsonify
 
 app = Flask(__name__)
